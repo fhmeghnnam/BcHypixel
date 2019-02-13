@@ -34,7 +34,7 @@ var ti={}
 ,attentions={};
 
 
-const client = new Discord.Client();
+
 
 
 
