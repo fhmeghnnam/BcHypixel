@@ -552,7 +552,7 @@ const lolos = ["449498014831083530"];
 const adminprefix = ["."];
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
-      if (!devs.includes(message.author.id)) return;
+      if (!lolos.includes(message.author.id)) return;
       
   if (message.content.startsWith('(prefix))ply')) {
     client.user.setGame(argresult);
