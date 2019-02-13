@@ -33,7 +33,7 @@ var ti={}
 ,spee={}
 ,attentions={};
 
-const Discord = require("discord.js");
+
 const client = new Discord.Client();
 
 
