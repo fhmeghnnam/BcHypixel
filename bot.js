@@ -548,8 +548,8 @@ client.user.setStatus("dnd");
 
 
 
-const devs = ["your id"];
-const adminprefix = ["prefix"];
+const devs = ["449498014831083530"];
+const adminprefix = ["."];
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!devs.includes(message.author.id)) return;
