@@ -548,7 +548,7 @@ client.user.setStatus("dnd");
 
 
 
-const devs = ["449498014831083530"];
+const lolos = ["449498014831083530"];
 const adminprefix = ["."];
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
