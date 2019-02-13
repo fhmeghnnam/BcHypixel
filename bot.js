@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const devs = ['389090790984515594'];
+const devs = ['449498014831083530'];
 const db = require('quick.db');
 const premium = ['470896018603376640']
 const client = new Discord.Client();   
@@ -548,11 +548,11 @@ client.user.setStatus("dnd");
 
 
 
-const lolos = ["449498014831083530"];
-const adminprefix = ["."];
+
+
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
-      if (!lolos.includes(message.author.id)) return;
+      if (!devs.includes(message.author.id)) return;
       
   if (message.content.startsWith('(prefix))ply')) {
     client.user.setGame(argresult);
