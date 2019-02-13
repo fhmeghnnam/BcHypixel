@@ -533,14 +533,18 @@ function rebel(first, second) {
 });
 
 
-client.on('ready',  () => {
-  console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'); 
-  console.log('by BadGuY');
-  console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
-  console.log(`Logged in as  * [ " ${client.user.username} " ] servers! [ " ${client.guilds.size} " ]`);
-  console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
-  console.log('is online')
-client.user.setStatus("dnd");
+
+
+const gamestats = [`Legend_FH`,`ThatsMeFhme!`,`Legends`,`Best`]
+var index = 0
+var timer = 10 // الوقت بالثواني لتغير الستريمنق
+client.on("ready", ()=> {
+        setInterval(function(){
+        client.user.setGame(`${gamestats[index]}`,'https://www.twitch.tv/ACMBOT') 
+        index++
+            if( index >= gamestats.length) index = 0 ;
+        }, timer*1000);
+
 });
 
 
@@ -550,38 +554,11 @@ client.user.setStatus("dnd");
 
 
 
-client.on('message', message => {
-    var argresult = message.content.split(` `).slice(1).join(' ');
-      if (!devs.includes(message.author.id)) return;
-      
-  if (message.content.startsWith('(prefix))ply')) {
-    client.user.setGame(argresult);
-      message.channel.send(`**✅   ${argresult}**`)
-  } else 
-     if (message.content === ("leave")) {
-    message.guild.leave();        
-  } else  
-  if (message.content.startsWith('(prefix)wt')) {
-  client.user.setActivity(argresult, {type:'WATCHING'});
-      message.channel.send(`**✅   ${argresult}**`)
-  } else 
-  if (message.content.startsWith('mils')) {
-  client.user.setActivity(argresult , {type:'LISTENING'});
-      message.channel.send(`**✅   ${argresult}**`)
-  } else 
-  if (message.content.startsWith('(prefix)st')) {
-    client.user.setGame(argresult, "https://www.twitch.tv/idk");
-      message.channel.send(`**✅**`)
-  }
-  if (message.content.startsWith('(prefix)setname')) {
-  client.user.setUsername(argresult).then
-      message.channel.send(`Changing The Name To ..**${argresult}** `)
-} else
-if (message.content.startsWith('(prefix)setavatar')) {
-  client.user.setAvatar(argresult);
-    message.channel.send(`Changing The Avatar To :**${argresult}** `);
-}
-});
+
+
+
+  
+  
 
 
 
