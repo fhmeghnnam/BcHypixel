@@ -680,7 +680,7 @@ let devs = ["449498014831083530"];
 client.on("message", msg =>{
   let args = msg.content.split(" ").slice(1)[0];
   let cmd = msg.content.split(' ')[0]
-  if(cmd === `!{prefix}giftR`){
+  if(cmd === `${prefix}giftR`){
   let roleW = msg.mentions.roles.first();
   if(!devs.includes(msg.author.id)){
     let embed = new Discord.RichEmbed()
