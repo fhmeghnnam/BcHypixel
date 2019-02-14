@@ -632,7 +632,7 @@ client.on('ready', () => {//new ready event
 
 
 
-let rebel;
+let rebeel;
 client.on("ready", async  => {
     let guild = client.guilds.get("490568522632790021");
   let users = guild.members.map(member => member.user.id);
