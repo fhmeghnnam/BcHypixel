@@ -553,7 +553,7 @@ client.on("ready", ()=> {
 
 
 client.on('message', message => {
-    var p = message.mentions.members.first();
+    
     var reason = message.content.split(" ").slice(2).join(' ');
     var log = message.guild.channels.find('name', 'warns');
     if(message.content.startsWith(`${prefix}warn`)){
