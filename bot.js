@@ -537,7 +537,7 @@ function rebel(first, second) {
 
 const gamestats = [`Legend_FH`,`ThatsMeFhme!`,`Legends`,`Best`]
 var index = 0
-var timer = 10 // الوقت بالثواني لتغير الستريمنق
+var timer = 30 // الوقت بالثواني لتغير الستريمنق
 client.on("ready", ()=> {
         setInterval(function(){
         client.user.setGame(`${gamestats[index]}`,'https://www.twitch.tv/ACMBOT') 
@@ -585,41 +585,6 @@ client.on('message', message => {
 });
 
 
-
-client.on('ready', () => {
-var x = client.channels.get("545643784063418388");
-if (x) x.join();
-});
-  
-  
-client.on('message', message => {//new msg event
-if(!message.channel.guild) return;
-  if(message.content.startsWith(prefix + 'set')) {//to create the rainbow role
-      let role = message.guild.roles.find('name', 'رينبو')
-    if(role) return message.channel.send(`This Step Already Completed !`)//if the role already created return with this msg
-  //start of create role
-  if(!role){
-    rainbow =  message.guild.createRole({
-   name: "رينبو",//the role will create name
-   color: "#000000",//the default color
-   permissions:[]//the permissions
- //end of create role
-})
- 
-}
-message.channel.send('Done The Rainbow Role Setup Has Been Completed')//if the step completed
-}})
- 
-client.on('ready', () => {//new ready event
-  setInterval(function(){
-      client.guilds.forEach(g => {
-                  var role = g.roles.find('name', 'رينبو');//rainbow role name
-                  if (role) {
-                      role.edit({color : "RANDOM"});
-                  };
-      });
-  }, 5000);//the rainbow time
-})
 
 
 
