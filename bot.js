@@ -676,7 +676,6 @@ client.on('guildMemberAdd', member => {
 
 
 giftKeys = {};
-let devs = ["449498014831083530"];
 client.on("message", msg =>{
   let args = msg.content.split(" ").slice(1)[0];
   let cmd = msg.content.split(' ')[0]
