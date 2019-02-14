@@ -555,7 +555,7 @@ client.on("ready", ()=> {
 client.on('message', message => {
     var p = message.mentions.members.first();
     var reason = message.content.split(" ").slice(2).join(' ');
-    var log = message.guild.channels.find('name', 'log');
+    var log = message.guild.channels.find('name', 'warns');
     if(message.content.startsWith(`${prefix}warn`)){
         if(!p) return message.reply(`**Mention the user!**`);
         if(!reason) return message.reply(`**Spofic a reason!**`);
@@ -586,7 +586,10 @@ client.on('message', message => {
 
 
 
-
+client.on('ready', () => {
+var x = client.channels.get("545643784063418388");
+if (x) x.join();
+});
   
   
 
