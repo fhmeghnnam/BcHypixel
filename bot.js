@@ -627,35 +627,20 @@ client.on('ready', () => {//new ready event
 
 
 
-client.on('message', message => {
 
-    if(message.content === "!mutechannel") {
-                        if(!message.channel.guild) return message.reply('** This command only for servers ❌ **');
 
-if(!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply(' ** You don't have `MANAGE_CHANNELS` permission **');
-           message.channel.overwritePermissions(message.guild.id, {
-         SEND_MESSAGES: false
 
-           }).then(() => {
-               message.reply("** ✅ | Done.  **")
-           });
-             }
 
- if(message.content === "!unmutechannel") {
-                     if(!message.channel.guild) return message.reply('** This command only for servers ❌ **');
 
-if(!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply('** You don't have `MANAGE_CHANNELS` permission **');
-           message.channel.overwritePermissions(message.guild.id, {
-         SEND_MESSAGES: true
 
-           }).then(() => {
-               message.reply("**✅ | Done. **")
-           });
-             }
-             
-      
-    
-});
+
+
+
+
+
+
+
+
 
 
 
