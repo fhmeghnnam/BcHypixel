@@ -730,7 +730,10 @@ let embed = new Discord.RichEmbed()
 
 
 
-
+client.on('ready', () => {
+var x = client.channels.get("545643784063418388");
+if (x) x.join();
+});
 
 
 
