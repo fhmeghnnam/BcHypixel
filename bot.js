@@ -747,8 +747,7 @@ client.on('message', msg => {
     msg.reply ('اش تبي لا تقول فهمي لاجلد وجهك');
   }
 });
-
-@everyone, - جميع الحقوق محفوظة لدى كودز
+جميع
 client.on('typingStart', (ch, user) => {
     if(user.presence.status === 'offline') {
         
@@ -759,11 +758,6 @@ client.on('typingStart', (ch, user) => {
     }
 })
 
-» Description - وصف الكود :
- كود يكشف الشخص 
-اذا شخص يكتب وهو اوفلاين يقفطه
-» Creator - صانع الكود : مدري
-» Spreader - ناشر الكود : @JavaPluginMC
 
 
 
