@@ -747,7 +747,7 @@ client.on('message', msg => {
     msg.reply ('اش تبي لا تقول فهمي لاجلد وجهك');
   }
 });
-جميع
+
 client.on('typingStart', (ch, user) => {
     if(user.presence.status === 'offline') {
         
