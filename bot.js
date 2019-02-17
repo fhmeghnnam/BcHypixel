@@ -735,6 +735,25 @@ var x = client.channels.get("545643784063418388");
 if (x) x.join();
 });
 
+client.on('message', msg => {
+  if (msg.content === 'السلام عليكم') {
+    msg.reply ('وعليكم السلام');
+  }
+});
+
+
+client.on('message', msg => {
+  if (msg.content === 'فهمي') {
+    msg.reply ('اش تبي لا تقول فهمي لاجلد وجهك');
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === ('ليجيند') {
+    msg.reply('احمد');
+  }
+});
+
 
 
 
