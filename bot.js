@@ -748,7 +748,22 @@ client.on('message', msg => {
   }
 });
 
+@everyone, - جميع الحقوق محفوظة لدى كودز
+client.on('typingStart', (ch, user) => {
+    if(user.presence.status === 'offline') {
+        
+        ch.send(`${user} ليش تكتب وانت اوفلاين ؟  `)
+        .then(msg => {
+            msg.delete(10000)
+        })
+    }
+})
 
+» Description - وصف الكود :
+ كود يكشف الشخص 
+اذا شخص يكتب وهو اوفلاين يقفطه
+» Creator - صانع الكود : مدري
+» Spreader - ناشر الكود : @JavaPluginMC
 
 
 
