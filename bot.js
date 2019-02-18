@@ -759,7 +759,11 @@ client.on('typingStart', (ch, user) => {
 })
 
 
+
 client.on('message', message => {
+
+if(!['449498014831083530'].includes(message.author.id)) return;
+
 
     if (message.author.bot) return;
   
@@ -806,7 +810,6 @@ client.on('message', message => {
   
   
   });
-
    
        
 
