@@ -759,44 +759,53 @@ client.on('typingStart', (ch, user) => {
 })
 
 
-client.on('message', message => {//حقوق Alpha and FireKingYT and SoEdit
-    if (message.author.bot) return;//حقوق Alpha and FireKingYT and SoEdit
-    if (!message.content.startsWith(prefix)) return;//حقوق Alpha and FireKingYT and SoEdit
-  let args = message.content.split(" ").slice(1);//حقوق Alpha and FireKingYT and SoEdit
-  let x = args.join(" ")//حقوق Alpha and FireKingYT and SoEdit
-    if(message.content.startsWith(prefix + 'say')) {//حقوق Alpha and FireKingYT and SoEdit
-        let FireKing1 = new Discord.RichEmbed()//حقوق Alpha and FireKingYT and SoEdit
-        .setTitle("**اختار كيف تريد الساي**")//حقوق Alpha and FireKingYT and SoEdit
-       .setDescription(`**
-       📬 | اذا تريد البوت يرسلك ساي بي امبد
-       📇 | اذا تريد البوت يرسلك ساي بدون امبد
-       **`)//حقوق Alpha and FireKingYT and SoEdit
-        message.channel.send(FireKing1).then(b => {//حقوق Alpha and FireKingYT and SoEdit
-            b.react('📇')//حقوق Alpha and FireKingYT and SoEdit
-            .then(() => b.react('📬'))//حقوق Alpha and FireKingYT and SoEdit and SoEdit
-            .then(() =>b.react('📇'))//حقوق Alpha and FireKingYT and SoEdit
-            let reaction2Filter = (reaction, user) => reaction.emoji.name === '📇' && user.id === message.author.id;//حقوق Alpha and FireKingYT and SoEdit
-let reaction1Filter = (reaction, user) => reaction.emoji.name === '📬' && user.id === message.author.id;//حقوق Alpha and FireKingYT and SoEdit
-//حقوق Alpha and FireKingYT and SoEdit
-let reaction1 = b.createReactionCollector(reaction1Filter, { time: 12000 });//حقوق Alpha and FireKingYT and SoEdit
-let reaction2 = b.createReactionCollector(reaction2Filter, { time: 12000 });//حقوق Alpha and FireKingYT and SoEdit
-reaction2.on("collect", r => {//حقوق Alpha and FireKingYT and SoEdit
-    message.channel.send('#'+x).then(a => {//حقوق Alpha and FireKingYT and SoEdit
-        a.delete(5000)//حقوق Alpha and FireKingYT and SoEdit
-    })//حقوق Alpha and FireKingYT and SoEdit
-    })//حقوق Alpha and FireKingYT and SoEdit
-    reaction1.on("collect", r => {//حقوق Alpha and FireKingYT and SoEdit
-        let FireKing2 = new Discord.RichEmbed()//حقوق Alpha and FireKingYT and SoEdit
-    .setDescription('#'+x)//حقوق Alpha and FireKingYT and SoEdit
-    .setFooter(`Alpha Codes For Ever`)//حقوق Alpha and FireKingYT and SoEdit
-    message.channel.send(FireKing2).then(a => {//حقوق Alpha and FireKingYT and SoEdit
-    a.delete(5000)//حقوق Alpha and FireKingYT and SoEdit
-    //حقوق Alpha and FireKingYT and SoEdit
-    })//حقوق Alpha and FireKingYT and SoEdit
-    })//حقوق Alpha and FireKingYT and SoEdit
-        })//حقوق Alpha and FireKingYT and SoEdit
-    }//حقوق Alpha and FireKingYT and SoEdit
-});//حقوق Alpha and FireKingYT and SoEdit
+lient.on('message', message => {
+
+    if (message.author.bot) return;
+  
+    if (!message.content.startsWith(prefix)) return;
+  
+  
+    let command = message.content.split(" ")[0];
+  
+    command = command.slice(prefix.length);
+  
+  
+    let args = message.content.split(" ").slice(1);
+  
+  
+  // -say
+  
+    if (command === "say") {
+  
+            message.delete()
+  
+      message.channel.sendMessage(args.join(" ")).catch(console.error);
+  
+    }
+  
+    
+  
+   
+  
+  
+  if (command == "embed") {
+  
+      let say = new Discord.RichEmbed()
+  
+      .setDescription(args.join(" "))
+  
+      .setColor(0x23b2d6)
+  
+      message.channel.sendEmbed(say);
+  
+      message.delete();
+  
+    }
+  
+  
+  
+  });
 
    
        
