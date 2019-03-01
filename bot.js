@@ -2,14 +2,16 @@ const Discord = require("discord.js");
 const client = new Discord.Client(); 
 var prefix = "!!";
 var x = client.channels.get(449498014831083530)
-let BanMem = message.mentions.users.first();
-let sbb = message.content.split(" ").slice(2).join(" ");
-let banslog = client.channels.find("name", "ban-log");
 
 client.on('message', message => {
 if(message.author.bot) return;
 if(message.channel.type === 'dm') {
     messgae.reply ('private message not allow');
+
+    let BanMem = message.mentions.users.first();
+let sbb = message.content.split(" ").slice(2).join(" ");
+let banslog = client.channels.find("name", "ban-log");
+
 }
 if(message.content.startsWith(prefix +'ban')) {
     if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return
