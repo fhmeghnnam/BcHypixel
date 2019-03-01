@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client(); 
 var prefix = "!!";
-var x = client.channels.get(449498014831083530)
+
 
 client.on('message', message => {
 if(message.author.bot) return;
@@ -40,6 +40,8 @@ if(message.content.startsWith(prefix +'ban')) {
 
 }  
 });
+
+client.login(process.env.BOT_TOKEN);
    
        
 
