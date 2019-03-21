@@ -118,38 +118,6 @@ bot.on("message", async message => {
 
 
 fs.readdir('./Commands',function(err, files) {
-  if(err) console.log(err);
-  let cmds = files.filter(r => r.split('.').pop() === 'js');
-  if(cmds.length <= 0) return console.log(`# Broadcast: ${chalk.red("0 Commands to load.")}`);
-  cmds.forEach(r => {
-      let cmd = require(`./Commands/${r}`);
-      try {
-          bot.commands.set(cmd.help.name, cmd);
-          console.log(`# Broadcast: ${chalk.green(`Successfully loaded`)} ${chalk.bold.gray(r)}`);
-      } catch(e) {
-          if(e) return console.log(`هااي`);
-      }
-  });
-});
-
-
-
-
-
-
-bot.on('message',async message => {
-  if(message.author.bot || message.channel.type === 'dm') return;
-  let args = message.content.split(" ");
-  if(!message.content.startsWith(auth.prefix));
-  let cmd = client.commands.get(args[0].slice(auth.prefix.length));
-  let emojis = {
-    yes: `${bot.guilds.get(auth.emojisId).emojis.find(r => r.name === "Yes")}`,
-    wrong: `${bot.guilds.get(auth.emojisId).emojis.find(r => r.name === "Wrong")}`,
-    settings: `${bot.guilds.get(auth.emojisId).emojis.find(r => r.name === "Settings")}`,
-    warn: `${bot.guilds.get(auth.emojisId).emojis.find(r => r.name === "Warn")}`
-  };
-  if(cmd) cmd.run(bot, message, args.slice(1), RichEmbed, emojis);
-});
 
 
 
