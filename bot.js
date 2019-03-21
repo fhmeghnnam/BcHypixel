@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client(); 
 var prefix = "!!";
-
+const Fhme = require("fs");
 
 client.on('message', message => {
 if(message.author.bot) return;
