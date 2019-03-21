@@ -118,6 +118,12 @@ bot.on("message", async message => {
 
 
 fs.readdir('./Commands',function(err, files) {
+ 
+});
+
+
+
+
 
 
 
