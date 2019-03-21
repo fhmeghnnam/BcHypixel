@@ -116,12 +116,6 @@ bot.on("message", async message => {
 
 
 
-bot.commands = new Collection();
-if(auth.token.toLowerCase() === 'heroku') {
-    bot.login(process.env.BOT_TOKEN);
-} else {
-    bot.login(auth.token);
-}
 
 fs.readdir('./Commands',function(err, files) {
   if(err) console.log(err);
@@ -170,4 +164,4 @@ bot.on('message',async message => {
 
 
 
-bot.login("NTQ1MzM0MTYwMzM2NjE3NDk5.D2wMCA.lGhOGNwH22SPpMcCnPIy2uEMjQU")
+bot.login(process.env.BOT_TOKEN)
