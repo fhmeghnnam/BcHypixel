@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client(); 
 var prefix = "!!";
 const Fhme = require("fs");
+contst fhme = 'look at me yah fuck on me uah yah yah yah ah ah ah ah ah ah aha';
 
 client.on('message', message => {
 if(message.author.bot) return;
